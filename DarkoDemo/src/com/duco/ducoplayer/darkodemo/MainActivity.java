@@ -30,6 +30,8 @@ import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 
+	
+	// buttons under features
 	private ImageView sounds;
 	private ImageView productselector;
 	private ImageView scanner;
