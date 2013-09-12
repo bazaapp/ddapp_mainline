@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.duco.ducoplayer.darkodemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.duco.ducoplayer.darkodemo.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.duco.ducoplayer.darkodemo.ScannerActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar"  >
+        </activity>
+        <activity
+            android:name="com.duco.ducoplayer.darkodemo.ScreenSaverActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar"  >
+        </activity>
+        <activity
+            android:name="com.duco.ducoplayer.darkodemo.st.ShelfTalkerActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar"  >
+        </activity>
+        
+        
+        <activity
+            android:name="com.duco.ducoplayer.darkodemo.ps.PSGenericPage"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar"  >
+        </activity>
+        
+        <activity
+            android:name="com.duco.ducoplayer.darkodemo.ps.PSLandingActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar"  >
+        </activity>
+        
+        <activity
+            android:name="com.duco.ducoplayer.darkodemo.ps.PSPage01Activity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar"  >
+        </activity>
+        <activity
+            android:name="com.duco.ducoplayer.darkodemo.GenericMultiplePageActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar"  >
+        </activity>    
+    </application>
+
+</manifest>
