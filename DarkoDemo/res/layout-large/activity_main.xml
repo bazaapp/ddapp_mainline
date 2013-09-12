@@ -20,7 +20,7 @@
 	    android:layout_height="wrap_content"
 	    android:layout_x="514dp"
 	    android:layout_y="85dp"
-	    android:src="@drawable/scanner"
+	    android:src="@drawable/sld_scanner"
 	    android:visibility="invisible" />
 
 	<ImageView
@@ -37,7 +37,7 @@
 	    android:layout_height="wrap_content"
 	    android:layout_x="604dp"
 	    android:layout_y="73dp"
-	    android:src="@drawable/productselector"
+	    android:src="@drawable/sld_productselector"
 	    android:visibility="invisible" />
 
 	<ImageView
@@ -46,7 +46,7 @@
 	    android:layout_height="wrap_content"
 	    android:layout_x="530dp"
 	    android:layout_y="254dp"
-	    android:src="@drawable/shelftalker"
+	    android:src="@drawable/sld_shelftalker"
 	    android:visibility="invisible" />
 
 	<ImageView
@@ -55,7 +55,7 @@
 	    android:layout_height="wrap_content"
 	    android:layout_x="491dp"
 	    android:layout_y="166dp"
-	    android:src="@drawable/sounds"
+	    android:src="@drawable/sld_sounds"
 	    android:visibility="invisible" />
 
 	<fragment
