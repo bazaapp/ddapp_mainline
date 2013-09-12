@@ -35,11 +35,11 @@ public class MainActivity extends Activity {
 	private ImageView scanner;
 	private ImageView shelftalker;
 	
-	private ImageView ball01;
-	private ImageView ball02;
+	private ImageView features;
+	private ImageView technology;
 	
-	private boolean ball01Flag = true;
-	private boolean ball02Flag = true;
+	private boolean featuresFlag = true;
+	private boolean technologyFlag = true;
 			
 	private int defaultX;
 	private Handler _handler;
@@ -52,11 +52,11 @@ public class MainActivity extends Activity {
         _handler = new Handler();
 		
 		// initialise the two ball
-		ball01 = (ImageView)findViewById(R.id.ball01);
-		ball02 = (ImageView)findViewById(R.id.ball02);
+		features = (ImageView)findViewById(R.id.features);
+		technology = (ImageView)findViewById(R.id.technology);
 	
-		ball01.setOnTouchListener(new MyTouchListener());
-		ball02.setOnTouchListener(new MyTouchListener());
+		features.setOnTouchListener(new MyTouchListener());
+		technology.setOnTouchListener(new MyTouchListener());
 		
 		View container = findViewById(R.id.container);
 		container.setOnDragListener(new MyDragListener());
@@ -153,21 +153,21 @@ public class MainActivity extends Activity {
 		      case DragEvent.ACTION_DRAG_ENTERED:  {
 		        //v.setBackgroundDrawable(enterShape);
 		    	  View view = (View) event.getLocalState();
-		    	  if(view.getId() == R.id.ball01)  {
-			    	  if(ball01Flag)  {
+		    	  if(view.getId() == R.id.features)  {
+			    	  if(featuresFlag)  {
 				        	sounds.setVisibility(View.VISIBLE);
 				        	productselector.setVisibility(View.VISIBLE);
 				        	scanner.setVisibility(View.VISIBLE);
 				        	shelftalker.setVisibility(View.VISIBLE);
 				        	new Thread(new AnimateButton()).start();
 				        	
-				        	ball01Flag = false;
+				        	featuresFlag = false;
 				      }
 		    	  }
-		    	  else if(view.getId() == R.id.ball02)  {
-		    		  if(ball02Flag)  {
+		    	  else if(view.getId() == R.id.features)  {
+		    		  if(technologyFlag)  {
 		    			  
-		    			  ball02Flag = false;
+		    			  technologyFlag = false;
 		    		  }
 		    		  sounds.setVisibility(View.INVISIBLE);
 		    		  productselector.setVisibility(View.INVISIBLE);
@@ -196,8 +196,8 @@ public class MainActivity extends Activity {
 		        
 		        view.setVisibility(View.VISIBLE);
 		        
-		        if(view.getId() == R.id.ball01)  {
-			        if(!ball01Flag)  {
+		        if(view.getId() == R.id.features)  {
+			        if(!featuresFlag)  {
 			        	  //button01.setX(400);
 			        	  //button02.setX(400);
 			        	  //button03.setX(400);
@@ -206,12 +206,12 @@ public class MainActivity extends Activity {
 			    		  //button02.setVisibility(View.INVISIBLE);
 			    		  //button03.setVisibility(View.INVISIBLE);
 			    		  //button04.setVisibility(View.INVISIBLE);
-			    		  ball01Flag = true;
+			    		  featuresFlag = true;
 			    	}
 		        }
-		        else if(view.getId() == R.id.ball02)  {
-			        if(!ball02Flag)  {
-			    		  ball02Flag = true;
+		        else if(view.getId() == R.id.technology)  {
+			        if(!technologyFlag)  {
+			    		  technologyFlag = true;
 			    	}
 		        }
 		       

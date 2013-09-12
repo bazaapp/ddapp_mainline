@@ -7,12 +7,12 @@
     tools:context=".MainActivity" >
 
 	<ImageView
-	    android:id="@+id/ball02"
+	    android:id="@+id/technology"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_x="570dp"
 	    android:layout_y="316dp"
-	    android:src="@drawable/ball02" />
+	    android:src="@drawable/technology" />
 
 	<ImageView
 	    android:id="@+id/button03"
@@ -24,12 +24,12 @@
 	    android:visibility="invisible" />
 
 	<ImageView
-	    android:id="@+id/ball01"
+	    android:id="@+id/features"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_x="581dp"
 	    android:layout_y="131dp"
-	    android:src="@drawable/ball01" />
+	    android:src="@drawable/features" />
 
 	<ImageView
 	    android:id="@+id/button02"
