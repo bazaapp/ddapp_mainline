@@ -6,65 +6,82 @@
     android:background="@drawable/background"
     tools:context=".MainActivity" >
 
-	<ImageView
-	    android:id="@+id/technology"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_x="570dp"
-	    android:layout_y="316dp"
-	    android:src="@drawable/technology" />
+    <fragment
+        android:id="@+id/contentfragment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_x="0dp"
+        android:layout_y="615dp"
+        class="com.duco.ducoplayer.fragments.BottomMenuFragment" />
 
-	<ImageView
-	    android:id="@+id/button03"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_x="514dp"
-	    android:layout_y="85dp"
-	    android:src="@drawable/sld_scanner"
-	    android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/features"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="434dp"
+        android:layout_y="63dp"
+        android:src="@drawable/features" />
 
-	<ImageView
-	    android:id="@+id/features"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_x="581dp"
-	    android:layout_y="131dp"
-	    android:src="@drawable/features" />
+    <ImageView
+        android:id="@+id/button03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="367dp"
+        android:layout_y="17dp"
+        android:src="@drawable/sld_scanner"
+        android:visibility="invisible" />
 
-	<ImageView
-	    android:id="@+id/button02"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_x="604dp"
-	    android:layout_y="73dp"
-	    android:src="@drawable/sld_productselector"
-	    android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="457dp"
+        android:layout_y="5dp"
+        android:src="@drawable/sld_productselector"
+        android:visibility="invisible" />
 
-	<ImageView
-	    android:id="@+id/button04"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_x="530dp"
-	    android:layout_y="254dp"
-	    android:src="@drawable/sld_shelftalker"
-	    android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/button04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="383dp"
+        android:layout_y="186dp"
+        android:src="@drawable/sld_shelftalker"
+        android:visibility="invisible" />
 
-	<ImageView
-	    android:id="@+id/button01"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_x="491dp"
-	    android:layout_y="166dp"
-	    android:src="@drawable/sld_sounds"
-	    android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/button01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="344dp"
+        android:layout_y="98dp"
+        android:src="@drawable/sld_sounds"
+        android:visibility="invisible" />
 
-	<fragment
-	    android:id="@+id/contentfragment"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_marginBottom="10dp"
-	    android:layout_x="2dp"
-	    android:layout_y="425dp"
-	    class="com.duco.ducoplayer.fragments.BottomMenuFragment" />
+    <ImageView
+        android:id="@+id/technology"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="452dp"
+        android:layout_y="239dp"
+        android:src="@drawable/technology" />
+
+    <ImageView
+        android:id="@+id/security"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="380dp"
+        android:layout_y="270dp"
+        android:src="@drawable/sld_security"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/strategy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="75dp"
+        android:src="@drawable/strategy" />
 
 </AbsoluteLayout>

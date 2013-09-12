@@ -37,6 +37,11 @@ public class MainActivity extends Activity {
 	private ImageView scanner;
 	private ImageView shelftalker;
 	
+	//buttons under technology
+	private ImageView security;
+	
+	
+	//bubble buttons
 	private ImageView features;
 	private ImageView technology;
 	
@@ -63,10 +68,14 @@ public class MainActivity extends Activity {
 		View container = findViewById(R.id.container);
 		container.setOnDragListener(new MyDragListener());
 		
+		//initialise buttons
 		sounds = (ImageView)findViewById(R.id.button01);
 		productselector = (ImageView)findViewById(R.id.button02);
 		scanner = (ImageView)findViewById(R.id.button03);
 		shelftalker = (ImageView)findViewById(R.id.button04);
+		
+		//initialise buttons
+		security = (ImageView)findViewById(R.id.strategy);
 		
 		defaultX = (int)sounds.getX();
 		
@@ -107,6 +116,14 @@ public class MainActivity extends Activity {
 		});
 		
 		scanner.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+            	Intent anotherActivityIntent = new Intent(MainActivity.this, ScannerActivity.class);
+            	anotherActivityIntent.putExtra("com.duco.ducoplayer.darkodemo.homepath", GlobalParameters.SCANNER_DIR);
+            	startActivity(anotherActivityIntent);
+			}
+		});
+		
+		security.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
             	Intent anotherActivityIntent = new Intent(MainActivity.this, ScannerActivity.class);
             	anotherActivityIntent.putExtra("com.duco.ducoplayer.darkodemo.homepath", GlobalParameters.SCANNER_DIR);
@@ -157,20 +174,28 @@ public class MainActivity extends Activity {
 		    	  View view = (View) event.getLocalState();
 		    	  if(view.getId() == R.id.features)  {
 			    	  if(featuresFlag)  {
+			    		  	//show buttons
 				        	sounds.setVisibility(View.VISIBLE);
 				        	productselector.setVisibility(View.VISIBLE);
 				        	scanner.setVisibility(View.VISIBLE);
 				        	shelftalker.setVisibility(View.VISIBLE);
-				        	new Thread(new AnimateButton()).start();
+				        	new Thread(new AnimateFeaturesButton()).start();
 				        	
 				        	featuresFlag = false;
 				      }
+			    	  
+			    	  //hide other buttons
+			    	  security.setVisibility(View.INVISIBLE);
 		    	  }
-		    	  else if(view.getId() == R.id.features)  {
-		    		  if(technologyFlag)  {
+		    	  else if(view.getId() == R.id.technology)  {
+		    		  if(technologyFlag)  { 
+		    			  security.setVisibility(View.VISIBLE);
 		    			  
+		    			  new Thread(new AnimateTechologyButton()).start();
 		    			  technologyFlag = false;
 		    		  }
+		    		  
+		    		  //hide other buttons
 		    		  sounds.setVisibility(View.INVISIBLE);
 		    		  productselector.setVisibility(View.INVISIBLE);
 		    		  scanner.setVisibility(View.INVISIBLE);
@@ -257,7 +282,7 @@ public class MainActivity extends Activity {
 	 }
 	 
 	 
-	 private class AnimateButton implements Runnable  {
+	 private class AnimateFeaturesButton implements Runnable  {
 
 		@Override
 		public void run() {
@@ -274,6 +299,19 @@ public class MainActivity extends Activity {
 		 
 	 }
 	 
+	 private class AnimateTechologyButton implements Runnable  {
+
+		@Override
+		public void run() {
+			_handler.post(new Runnable() {	
+				@Override
+				public void run() {
+					new AnimateAsyncTask().doInBackground(security);
+				}
+			});			
+		}
+		 
+	 }
 	 
 	 private class AnimateAsyncTask extends AsyncTask<ImageView, Void, Void> {
 	     

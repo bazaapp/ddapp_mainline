@@ -67,4 +67,21 @@
         android:layout_marginBottom="10dp"
         class="com.duco.ducoplayer.fragments.BottomMenuFragment" />
 
+	<ImageView
+	    android:id="@+id/strategy"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_x="210dp"
+	    android:layout_y="73dp"
+	    android:src="@drawable/strategy" />
+
+	<ImageView
+	    android:id="@+id/security"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_x="492dp"
+	    android:layout_y="354dp"
+	    android:src="@drawable/sld_security"
+	    android:visibility="invisible" />
+
 </AbsoluteLayout>
