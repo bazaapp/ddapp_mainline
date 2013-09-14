@@ -40,13 +40,20 @@ public class MainActivity extends Activity {
 	//buttons under technology
 	private ImageView security;
 	
+	//buttons under darko
+	private ImageView about;
+	private ImageView learnmore;
 	
 	//bubble buttons
 	private ImageView features;
 	private ImageView technology;
+	private ImageView strategy;
+	private ImageView darko;
+	
 	
 	private boolean featuresFlag = true;
 	private boolean technologyFlag = true;
+	private boolean darkoFlag = true;
 			
 	private int defaultX;
 	private Handler _handler;
@@ -61,9 +68,14 @@ public class MainActivity extends Activity {
 		// initialise the two ball
 		features = (ImageView)findViewById(R.id.features);
 		technology = (ImageView)findViewById(R.id.technology);
-	
+		strategy = (ImageView)findViewById(R.id.strategy);
+		darko = (ImageView)findViewById(R.id.darko);
+		
 		features.setOnTouchListener(new MyTouchListener());
 		technology.setOnTouchListener(new MyTouchListener());
+		strategy.setOnTouchListener(new MyTouchListener());
+		darko.setOnTouchListener(new MyTouchListener());
+		
 		
 		View container = findViewById(R.id.container);
 		container.setOnDragListener(new MyDragListener());
@@ -75,7 +87,11 @@ public class MainActivity extends Activity {
 		shelftalker = (ImageView)findViewById(R.id.button04);
 		
 		//initialise buttons
-		security = (ImageView)findViewById(R.id.strategy);
+		security = (ImageView)findViewById(R.id.security);
+		
+		//initialise darko buttons
+		about = (ImageView)findViewById(R.id.sld_aboutus);
+		learnmore = (ImageView)findViewById(R.id.sld_learnmore);
 		
 		defaultX = (int)sounds.getX();
 		
@@ -125,11 +141,30 @@ public class MainActivity extends Activity {
 		
 		security.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-            	Intent anotherActivityIntent = new Intent(MainActivity.this, ScannerActivity.class);
-            	anotherActivityIntent.putExtra("com.duco.ducoplayer.darkodemo.homepath", GlobalParameters.SCANNER_DIR);
+            	Intent anotherActivityIntent = new Intent(MainActivity.this, GenericPageActivity.class);
+            	anotherActivityIntent.putExtra("com.duco.ducoplayer.darkodemo.homepath", GlobalParameters.SECURITY_DIR);
             	startActivity(anotherActivityIntent);
 			}
 		});
+		
+		
+		about.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+            	Intent anotherActivityIntent = new Intent(MainActivity.this, GenericPageActivity.class);
+            	anotherActivityIntent.putExtra("com.duco.ducoplayer.darkodemo.homepath", GlobalParameters.ABOUTUS_DIR);
+            	startActivity(anotherActivityIntent);
+			}
+		});
+		
+		learnmore.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+            	Intent anotherActivityIntent = new Intent(MainActivity.this, GenericPageActivity.class);
+            	anotherActivityIntent.putExtra("com.duco.ducoplayer.darkodemo.homepath", GlobalParameters.LEARNMORE_DIR);
+            	startActivity(anotherActivityIntent);
+			}
+		}); 
+		
+		
 	}
 
 	@Override
@@ -186,6 +221,9 @@ public class MainActivity extends Activity {
 			    	  
 			    	  //hide other buttons
 			    	  security.setVisibility(View.INVISIBLE);
+			  		  about.setVisibility(View.INVISIBLE);
+	    			  learnmore.setVisibility(View.INVISIBLE);
+			    	  
 		    	  }
 		    	  else if(view.getId() == R.id.technology)  {
 		    		  if(technologyFlag)  { 
@@ -200,6 +238,26 @@ public class MainActivity extends Activity {
 		    		  productselector.setVisibility(View.INVISIBLE);
 		    		  scanner.setVisibility(View.INVISIBLE);
 		    		  shelftalker.setVisibility(View.INVISIBLE);
+		    		  about.setVisibility(View.INVISIBLE);
+	    			  learnmore.setVisibility(View.INVISIBLE);
+		    	  }
+		    	  
+		    	  else if(view.getId() == R.id.darko)  {
+		    		  if(darkoFlag)  { 
+		    			  about.setVisibility(View.VISIBLE);
+		    			  learnmore.setVisibility(View.VISIBLE);
+		    			  
+		    			  new Thread(new AnimateDarkoButton()).start();
+		    			  darkoFlag = false;
+		    		  }
+		    		  
+		    		  //hide other buttons
+		    		  sounds.setVisibility(View.INVISIBLE);
+		    		  productselector.setVisibility(View.INVISIBLE);
+		    		  scanner.setVisibility(View.INVISIBLE);
+		    		  shelftalker.setVisibility(View.INVISIBLE);
+		    		  security.setVisibility(View.VISIBLE);
+		    		  
 		    	  }
 		    	  //hideFragment();
 		    	  break;
@@ -210,6 +268,7 @@ public class MainActivity extends Activity {
 		        break;
 		      }
 		      case DragEvent.ACTION_DROP:  {
+		    	 
 		        // Dropped, reassign View to ViewGroup
 		        View view = (View) event.getLocalState();
 		        ViewGroup owner = (ViewGroup) view.getParent();
@@ -276,8 +335,9 @@ public class MainActivity extends Activity {
 		 handAnimator.setRepeatCount(0);
 		 handAnimator.start();
 		 */
-		 Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
-	     button.startAnimation(shake);
+		 
+		 //Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+	     //button.startAnimation(shake);
 
 	 }
 	 
@@ -307,6 +367,21 @@ public class MainActivity extends Activity {
 				@Override
 				public void run() {
 					new AnimateAsyncTask().doInBackground(security);
+				}
+			});			
+		}
+		 
+	 }
+	 
+	 private class AnimateDarkoButton implements Runnable  {
+
+		@Override
+		public void run() {
+			_handler.post(new Runnable() {	
+				@Override
+				public void run() {
+					new AnimateAsyncTask().doInBackground(learnmore);
+					new AnimateAsyncTask().doInBackground(about);
 				}
 			});			
 		}

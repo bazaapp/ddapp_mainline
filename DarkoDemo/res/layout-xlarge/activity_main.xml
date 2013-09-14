@@ -66,7 +66,7 @@
         android:layout_y="615dp"
         android:layout_marginBottom="10dp"
         class="com.duco.ducoplayer.fragments.BottomMenuFragment" />
-
+  
 	<ImageView
 	    android:id="@+id/strategy"
 	    android:layout_width="wrap_content"
@@ -83,5 +83,29 @@
 	    android:layout_y="354dp"
 	    android:src="@drawable/sld_security"
 	    android:visibility="invisible" />
+
+	<ImageView
+	    android:id="@+id/darko"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_x="929dp"
+	    android:layout_y="310dp"
+	    android:src="@drawable/darko" />
+
+	<ImageView
+	    android:id="@+id/sld_learnmore"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_x="759dp"
+	    android:layout_y="405dp"
+	    android:src="@drawable/sld_learnmore" />
+
+	<ImageView
+	    android:id="@+id/sld_aboutus"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_x="801dp"
+	    android:layout_y="291dp"
+	    android:src="@drawable/sld_aboutus" />
 
 </AbsoluteLayout>

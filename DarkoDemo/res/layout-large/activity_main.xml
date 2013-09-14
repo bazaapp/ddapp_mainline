@@ -84,4 +84,28 @@
         android:layout_y="75dp"
         android:src="@drawable/strategy" />
 
+    <ImageView
+        android:id="@+id/darko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="676dp"
+        android:layout_y="138dp"
+        android:src="@drawable/darko" />
+
+    <ImageView
+        android:id="@+id/sld_learnmore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="523dp"
+        android:layout_y="157dp"
+        android:src="@drawable/sld_learnmore" />
+
+    <ImageView
+        android:id="@+id/sld_aboutus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="601dp"
+        android:layout_y="226dp"
+        android:src="@drawable/sld_aboutus" />
+
 </AbsoluteLayout>
