@@ -98,6 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_x="523dp"
         android:layout_y="157dp"
+        android:visibility="invisible"
         android:src="@drawable/sld_learnmore" />
 
     <ImageView
@@ -106,6 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_x="601dp"
         android:layout_y="226dp"
+        android:visibility="invisible"
         android:src="@drawable/sld_aboutus" />
 
 </AbsoluteLayout>
